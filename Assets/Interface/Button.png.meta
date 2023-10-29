@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d0be0be6af5f1095bdc388775ff8ddf
+guid: 84b3bb40ee35ce74c8a8f5850dd74a5d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
-  spriteBorder: {x: 5, y: 5, z: 5, w: 10}
+  spriteBorder: {x: 5, y: 5, z: 5, w: 5}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 32
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites: []
@@ -113,7 +126,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: d170ad16b363b5545817454eaa9fb279
-    internalID: 0
+    internalID: 124252921
     vertices: []
     indices: 
     edges: []
