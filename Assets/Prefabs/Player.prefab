@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -97011897
   m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 1742258083, guid: 2b42e3a1c796d6ca89b62159869b13cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -171,6 +171,7 @@ MonoBehaviour:
   westSlash: {fileID: 7127767836357997255, guid: d45920caf342f8ce4898649ac3f8509a, type: 3}
   northSlash: {fileID: 0}
   southSlash: {fileID: 0}
+  chickenMeatAmout: 0
 --- !u!95 &5577472914405441808
 Animator:
   serializedVersion: 5
