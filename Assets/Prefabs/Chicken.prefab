@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -97011897
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -241987293, guid: b0aa8ade9dea34fde9353d5319f4e88d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -156,9 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ed41a285a6541a49dc2a69f204551e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPC_RB: {fileID: 7462571676880279789}
-  NPCAnimator: {fileID: 8043474638147209963}
   moveSpeed: 2
+  rigidbody: {fileID: 0}
+  animator: {fileID: 0}
   minTimeSameDirection: 1
   maxTimeSameDirection: 3
   minTimeIdle: 1
