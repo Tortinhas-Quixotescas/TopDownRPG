@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCController : MonoBehaviour
+public class NPCController : EntityController
 {
-    public Rigidbody2D NPC_RB;
-    public Animator NPCAnimator;
-    public int moveSpeed = 5;
-
     public float minTimeSameDirection = 1.0f;
     public float maxTimeSameDirection = 3.0f;
     private float currentDirectionTime = 0;
@@ -17,19 +13,16 @@ public class NPCController : MonoBehaviour
     public float maxTimeIdle = 3.0f;
     private bool isIdle = false;
 
-    private float lastXValue = 0;
-    private float lastYValue = -1;
     private float randomX = 0;
     private float randomY = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        base.Start();
         HandleRandomMovement();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         HandleDirectionChange();
         HandleIdleAnimation();
@@ -50,7 +43,7 @@ public class NPCController : MonoBehaviour
 
                 if (!isIdle)
                 {
-                    NPCAnimator.SetTrigger("idle");
+                    this.animator.SetTrigger("idle");
                     isIdle = true;
                 }
 
@@ -61,9 +54,9 @@ public class NPCController : MonoBehaviour
 
     private void HandleIdleAnimation()
     {
-        if (isIdle && NPC_RB.velocity != Vector2.zero)
+        if (isIdle && this.rigidbody.velocity != Vector2.zero)
         {
-            NPCAnimator.ResetTrigger("idle");
+            this.animator.ResetTrigger("idle");
             isIdle = false;
         }
     }
@@ -84,17 +77,7 @@ public class NPCController : MonoBehaviour
         }
 
         Vector2 input = new Vector2(randomX, randomY);
-        NPC_RB.velocity = input * moveSpeed;
-        NPCAnimator.SetFloat("xMovement", input.x);
-        NPCAnimator.SetFloat("yMovement", input.y);
-
-        if (input != Vector2.zero)
-        {
-            lastXValue = input.x;
-            NPCAnimator.SetFloat("lastXValue", input.x);
-            lastYValue = input.y;
-            NPCAnimator.SetFloat("lastYValue", input.y);
-        }
+        this.HandleMovementInput(input);
     }
 
     private IEnumerator ChangeDirectionAfterDelay(float delayTime)
@@ -105,7 +88,7 @@ public class NPCController : MonoBehaviour
         {
             float idleTime = Random.Range(minTimeIdle, maxTimeIdle);
             Vector2 input = Vector2.zero;
-            NPC_RB.velocity = input;
+            this.rigidbody.velocity = input;
             isIdle = true;
             yield return new WaitForSeconds(idleTime);
         }

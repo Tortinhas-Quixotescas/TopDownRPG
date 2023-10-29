@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : EntityController
 {
-    public Rigidbody2D playerRB;
-    public int moveSpeed = 5;
-    public Animator playerAnimator;
     public string areaTransitionName;
     public bool busy = false;
 
@@ -20,12 +17,10 @@ public class PlayerController : MonoBehaviour
     public GameObject southSlash;
 
     private bool isDelaying = false;
-    private float lastXValue = 0;
-    private float lastYValue = -1;
 
     public static PlayerController uniqueInstance;
 
-    private void Awake()
+    void Awake()
     {
         if (uniqueInstance == null)
         {
@@ -37,10 +32,16 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     private void Start()
     {
+        base.Start();
         InitializeSlashPools();
+    }
+
+    private void Update()
+    {
+        HandleMovementInput();
+        HandleSwordAttack();
     }
 
     private void OnLevelWasLoaded()
@@ -56,26 +57,10 @@ public class PlayerController : MonoBehaviour
         southSlashPool = new ObjectPool(southSlash, 1);
     }
 
-    private void Update()
-    {
-        HandleMovementInput();
-        HandleSwordAttack();
-    }
-
     private void HandleMovementInput()
     {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        playerRB.velocity = input * moveSpeed;
-        playerAnimator.SetFloat("xMovement", input.x);
-        playerAnimator.SetFloat("yMovement", input.y);
-
-        if (input != Vector2.zero)
-        {
-            lastXValue = input.x;
-            playerAnimator.SetFloat("lastXValue", input.x);
-            lastYValue = input.y;
-            playerAnimator.SetFloat("lastYValue", input.y);
-        }
+        this.HandleMovementInput(input);
     }
 
     private void HandleSwordAttack()
@@ -84,19 +69,19 @@ public class PlayerController : MonoBehaviour
         {
             busy = true;
 
-            if (lastXValue > 0)
+            if (this.lastXValue > 0)
             {
                 PerformSwordAttack("swordAttackEast", eastSlash, eastSlashPool);
             }
-            else if (lastXValue < 0)
+            else if (this.lastXValue < 0)
             {
                 PerformSwordAttack("swordAttackWest", westSlash, westSlashPool);
             }
-            else if (lastYValue > 0)
+            else if (this.lastYValue > 0)
             {
                 PerformSwordAttack("swordAttackNorth", northSlash, northSlashPool);
             }
-            else if (lastYValue < 0)
+            else if (this.lastYValue < 0)
             {
                 PerformSwordAttack("swordAttackSouth", southSlash, southSlashPool);
             }
@@ -107,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     private void PerformSwordAttack(string triggerName, GameObject slash, ObjectPool slashPool)
     {
-        playerAnimator.SetTrigger(triggerName);
+        this.animator.SetTrigger(triggerName);
         GameObject slashObject = slashPool.GetFromPool();
         if (slashObject != null)
         {
@@ -123,6 +108,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
         isDelaying = false;
         busy = false;
-        playerAnimator.SetTrigger("notBusy");
+        this.animator.SetTrigger("notBusy");
     }
 }
