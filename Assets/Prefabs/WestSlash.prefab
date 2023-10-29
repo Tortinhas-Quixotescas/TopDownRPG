@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3967413144643798399}
   - component: {fileID: 3328854327111777492}
-  - component: {fileID: 6011668393068086754}
   - component: {fileID: -4166669766468562418}
   - component: {fileID: 1170942885905620747}
+  - component: {fileID: 3395754892079050688}
   m_Layer: 0
   m_Name: WestSlash
   m_TagString: Untagged
@@ -87,18 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6011668393068086754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7127767836357997255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b143a3909aa736e8395ad714679c53d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &-4166669766468562418
 AudioSource:
   m_ObjectHideFlags: 0
@@ -240,3 +228,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &3395754892079050688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127767836357997255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d86a4f29065d6f4880f45f7a1b81c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xPositionOffset: -0.1
+  yPositionOffset: 0

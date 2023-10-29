@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8923499608973873350}
   - component: {fileID: 5394750500649553300}
-  - component: {fileID: 2672676513655966436}
   - component: {fileID: 6854371583195545704}
   - component: {fileID: -4377456241129754926}
+  - component: {fileID: -1319347236180342640}
   m_Layer: 0
   m_Name: EastSlash
   m_TagString: Untagged
@@ -87,18 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2672676513655966436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8905134111055214728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94df5eaed74b33bd7a56695cf62a8ed6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &6854371583195545704
 AudioSource:
   m_ObjectHideFlags: 0
@@ -240,3 +228,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &-1319347236180342640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8905134111055214728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d86a4f29065d6f4880f45f7a1b81c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xPositionOffset: 0.1
+  yPositionOffset: 0

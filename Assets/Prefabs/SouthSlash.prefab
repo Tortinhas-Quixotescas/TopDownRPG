@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2891191218997328162}
   - component: {fileID: 2054741604187965727}
-  - component: {fileID: 7639471173950793605}
   - component: {fileID: -2037850491944168304}
   - component: {fileID: 5674564764277891363}
+  - component: {fileID: 707309405585395719}
   m_Layer: 0
   m_Name: SouthSlash
   m_TagString: Untagged
@@ -87,18 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7639471173950793605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2587778237682850945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 537de5560822ef3b2878f9e65bbd10a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &-2037850491944168304
 AudioSource:
   m_ObjectHideFlags: 0
@@ -240,3 +228,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &707309405585395719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2587778237682850945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d86a4f29065d6f4880f45f7a1b81c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xPositionOffset: 0
+  yPositionOffset: -0.1
