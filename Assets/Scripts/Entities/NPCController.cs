@@ -16,9 +16,18 @@ public class NPCController : EntityController
     private float randomX = 0;
     private float randomY = 0;
 
+    public ObjectPool chickenMeatPool;
+    public GameObject chickenMeat;
+
+    public bool isDead = false;
+
+    public AudioClip deathSound;
+
+    // Start is called before the first frame update
     private void Start()
     {
         base.Start();
+        chickenMeatPool = new ObjectPool(chickenMeat, 1);
         HandleRandomMovement();
     }
 
@@ -95,5 +104,23 @@ public class NPCController : EntityController
 
         isChangingDirection = false;
         HandleRandomMovement();
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Attack"))
+        {
+            GameObject chickenMeat = chickenMeatPool.GetFromPool();
+            if (chickenMeat != null)
+            {
+                Vector2 pos = transform.position;
+
+                chickenMeat.transform.position = pos;
+                chickenMeat.SetActive(true);
+            }
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            gameObject.SetActive(false);
+            isDead = true;
+        }
     }
 }

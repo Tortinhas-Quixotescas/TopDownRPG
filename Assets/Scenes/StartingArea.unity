@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &34973433
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6054170537755892146, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_Name
+      value: Chicken (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
 --- !u!1 &164978189
 GameObject:
   m_ObjectHideFlags: 0
@@ -28856,81 +28913,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e71f6acad7c33b4a04aefe4bd73683, type: 3}
---- !u!1 &1229639088
-GameObject:
+--- !u!1001 &1185588428
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1229639092}
-  - component: {fileID: 1229639091}
-  - component: {fileID: 1229639090}
-  - component: {fileID: 1229639089}
-  - component: {fileID: 1229639093}
-  - component: {fileID: 1229639094}
-  m_Layer: 0
-  m_Name: Chicken
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &1229639089
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229639088}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2dbdbff528091dd29a2aa9964e65718e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!58 &1229639090
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229639088}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3}
   serializedVersion: 2
   m_Radius: 0.4
 --- !u!212 &1229639091
@@ -29160,6 +29145,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b80af33a4701014f3bd62824afa031c2, type: 3}
+--- !u!1001 &2050557086
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6054170537755892146, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_Name
+      value: Chicken (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260217669950478051, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f4a377306c3f515b5bb60b8da6b42880, type: 3}
 --- !u!1 &2110565158
 GameObject:
   m_ObjectHideFlags: 0
@@ -29705,14 +29747,14 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 87422ce954a6550a4aaf936b14e1792e, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: d1dc9d4fff7c5df7a9a09383f18eddef, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 60c82e6c66d5c43fb95beb6df839c3b7, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 1fe9a7fd0171a3a00a6de118b86f2cab, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 3871fdd1fd6ebb7f985a37e007e23150, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 42cdc709022e9dbed816fd04a7dbb155, type: 2}
   - m_RefCount: 1
@@ -29911,13 +29953,13 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300084, guid: 9589500635eeaef4fa211db6fa452780, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21301900, guid: 9589500635eeaef4fa211db6fa452780, type: 3}
+    m_Data: {fileID: 21300084, guid: 9589500635eeaef4fa211db6fa452780, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21301898, guid: 9589500635eeaef4fa211db6fa452780, type: 3}
+    m_Data: {fileID: 21301792, guid: 9589500635eeaef4fa211db6fa452780, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21301946, guid: 9589500635eeaef4fa211db6fa452780, type: 3}
+    m_Data: {fileID: 21301848, guid: 9589500635eeaef4fa211db6fa452780, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21301944, guid: 9589500635eeaef4fa211db6fa452780, type: 3}
+    m_Data: {fileID: 21300086, guid: 9589500635eeaef4fa211db6fa452780, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21301990, guid: 9589500635eeaef4fa211db6fa452780, type: 3}
   m_TileMatrixArray:
@@ -29974,4 +30016,6 @@ SceneRoots:
   - {fileID: 1611181515}
   - {fileID: 924775028}
   - {fileID: 1443111041}
-  - {fileID: 1229639092}
+  - {fileID: 1185588428}
+  - {fileID: 34973433}
+  - {fileID: 2050557086}
