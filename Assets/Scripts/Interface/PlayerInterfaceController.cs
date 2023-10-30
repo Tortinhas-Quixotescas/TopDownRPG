@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -7,7 +5,7 @@ public class PlayerInterfaceController : MonoBehaviour
 {
 
     public GameObject timer;
-    public GameObject inventory;
+    public GameObject inventoryPanel;
     private TMP_Text timerTMP;
 
     private void Start()
@@ -23,8 +21,8 @@ public class PlayerInterfaceController : MonoBehaviour
         bool inventoryChange = Input.GetKeyDown(KeyCode.E);
         if (inventoryChange)
         {
-            bool currentState = this.inventory.active;
-            this.inventory.SetActive(!currentState);
+            bool currentState = this.inventoryPanel.active;
+            this.inventoryPanel.SetActive(!currentState);
             Time.timeScale = currentState == true ? 1 : 0;
         }
     }

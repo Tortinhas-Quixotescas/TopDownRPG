@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MainManager : MonoBehaviour
@@ -5,6 +6,7 @@ public class MainManager : MonoBehaviour
     public static MainManager Instance;
 
     public int remainingTime;
+    public Inventory inventory;
 
     private void Awake()
     {
@@ -17,6 +19,7 @@ public class MainManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        this.inventory = new Inventory();
         InvokeRepeating("DecreaseTimeRemaining", 0, 1);
     }
 
@@ -27,6 +30,19 @@ public class MainManager : MonoBehaviour
         {
             Application.Quit();
             UnityEditor.EditorApplication.isPlaying = false;
+        }
+    }
+
+    public void UpdateInventory(Inventory.InventoryItems item, int difference)
+    {
+        switch (item)
+        {
+            case Inventory.InventoryItems.ChickenMeat:
+                this.inventory.chickenMeat = Math.Max(this.inventory.chickenMeat + difference, 0);
+                break;
+            case Inventory.InventoryItems.CowMeat:
+                this.inventory.cowMeat = Math.Max(this.inventory.cowMeat + difference, 0);
+                break;
         }
     }
 
