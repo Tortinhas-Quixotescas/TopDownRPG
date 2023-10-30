@@ -17,7 +17,6 @@ public class PlayerController : EntityController
     public GameObject southSlash;
 
     private bool isDelaying = false;
-    public int chickenMeatAmout = 0;
 
     public static PlayerController uniqueInstance;
 
@@ -33,6 +32,7 @@ public class PlayerController : EntityController
             Destroy(gameObject);
         }
     }
+
     private void Start()
     {
         base.Start();
@@ -115,6 +115,10 @@ public class PlayerController : EntityController
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("ChickenMeat"))
-            ++chickenMeatAmout;
+            MainManager.Instance.UpdateInventory(Inventory.InventoryItems.ChickenMeat, 2);
+        else if (collider.CompareTag("CowMeat"))
+            MainManager.Instance.UpdateInventory(Inventory.InventoryItems.CowMeat, 4);
+        else if (collider.CompareTag("PigMeat"))
+            MainManager.Instance.UpdateInventory(Inventory.InventoryItems.PigMeat, 3);
     }
 }
