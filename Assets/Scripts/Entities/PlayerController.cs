@@ -33,7 +33,7 @@ public class PlayerController : EntityController
             Destroy(gameObject);
         }
     }
-    
+
     private void Start()
     {
         base.Start();
