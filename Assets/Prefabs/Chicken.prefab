@@ -166,6 +166,7 @@ MonoBehaviour:
   chickenMeat: {fileID: 9190075421753059304, guid: e043faf31b65eabf1bc94696d4a05c48, type: 3}
   isDead: 0
   deathSound: {fileID: 8300000, guid: 1215776c6aa3dc146ad6ebe88132576d, type: 3}
+  health: 0
 --- !u!50 &7462571676880279789
 Rigidbody2D:
   serializedVersion: 4
