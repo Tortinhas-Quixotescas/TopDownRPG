@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Attack
   - ChickenMeat
+  - CowMeat
   layers:
   - Default
   - TransparentFX
