@@ -7,28 +7,17 @@ public class PlayerInterfaceController : MonoBehaviour
 {
 
     public GameObject timer;
-    public float remainingTime;
-
     private TMP_Text timerTMP;
 
     private void Start()
     {
         this.timerTMP = timer.GetComponent<TMP_Text>();
-        this.timerTMP.SetText(this.remainingTime.ToString().PadLeft(3, '0'));
-
-        InvokeRepeating("DecreaseTimeRemaining", 1.0f, 1.0f);
+        this.timerTMP.SetText(MainManager.Instance.remainingTime.ToString().PadLeft(3, '0'));
     }
 
-    private void DecreaseTimeRemaining()
+    private void Update()
     {
-        this.remainingTime--;
-        this.timerTMP.SetText(this.remainingTime.ToString().PadLeft(3, '0'));
-
-        if (this.remainingTime <= 0)
-        {
-            Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
+        this.timerTMP.SetText(MainManager.Instance.remainingTime.ToString().PadLeft(3, '0'));
     }
 
 }
