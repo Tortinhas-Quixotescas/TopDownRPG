@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -108,7 +108,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pig_eat_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 423
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42173a61cd630536ea177c3f277b7129
+      internalID: -1777571460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 423
+        width: 21
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ed03f99adf43d70afb0b5b382233a9
+      internalID: 753841035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_2
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 423
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67508e387197be955b680996e7694ba6
+      internalID: 126367262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_3
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 423
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bede4b9ab0a159ba2a68fd6416fe6188
+      internalID: 233282911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_4
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 300
+        width: 55
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3093c68ca7858588abe5df345667800
+      internalID: 1475211025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_5
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 300
+        width: 56
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c5f5a91001e433ba13253a3165cd89
+      internalID: -1533160232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 300
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ea308f4476e8bb7b4c16986477773f
+      internalID: -280896560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_7
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 300
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e53e61cefaf9ed4bc8c595edd09d11
+      internalID: -1223713967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 165
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bd7cd1b87f40e3397e28380cdbcea5
+      internalID: -701479204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_9
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 165
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2f0d978cae1706aa72b54fcd6866bc
+      internalID: 103622648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_10
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 163
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b9ed53df0161ad2ae1957f3b636f80
+      internalID: -129697032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_11
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 162
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b8039c11bfbc3a48f4a5c9211b0a52
+      internalID: 893425293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_12
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 44
+        width: 55
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87c4886dfaab649b91f30ad8e3eb0af
+      internalID: 1887864817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_13
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 44
+        width: 56
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99bfdf4b9b3980d7aaa3248b9ea93fd1
+      internalID: 1733976007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_14
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 44
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb89864ecd452f7aafbb16d2135eb75
+      internalID: -575570913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_eat_15
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 44
+        width: 57
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ce26d54219c780eab93930d8e7016a
+      internalID: 1960564528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +455,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pig_eat_0: -1777571460
+      pig_eat_1: 753841035
+      pig_eat_10: -129697032
+      pig_eat_11: 893425293
+      pig_eat_12: 1887864817
+      pig_eat_13: 1733976007
+      pig_eat_14: -575570913
+      pig_eat_15: 1960564528
+      pig_eat_2: 126367262
+      pig_eat_3: 233282911
+      pig_eat_4: 1475211025
+      pig_eat_5: -1533160232
+      pig_eat_6: -280896560
+      pig_eat_7: -1223713967
+      pig_eat_8: -701479204
+      pig_eat_9: 103622648
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

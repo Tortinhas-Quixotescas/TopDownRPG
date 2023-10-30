@@ -22,6 +22,8 @@ public class NPCController : EntityController
     public GameObject meatPrefab;
     public bool isDead = false;
     public AudioClip deathSound;
+    public int health = 1;
+    public float knocback = 0.3f;
 
     private void Start()
     {
@@ -107,17 +109,64 @@ public class NPCController : EntityController
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Attack"))
+        Vector2 aux = Vector2.zero;
+        Vector2 LastPos = Vector2.zero;
+        if (collider.CompareTag("AttackEast"))
+        {
+            moveSpeed = 3 * moveSpeed;
+            isChangingDirection = true;
+            HandleRandomMovement();
+            --health;
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            LastPos = transform.position;
+            aux = new Vector2(transform.position.x + knocback, transform.position.y);
+            transform.position = aux;
+        }
+        if (collider.CompareTag("AttackWest"))
+        {
+            moveSpeed = 3 * moveSpeed;
+            isChangingDirection = true;
+            HandleRandomMovement();
+            --health;
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            LastPos = transform.position;
+            aux = new Vector2(transform.position.x - knocback, transform.position.y);
+            transform.position = aux;
+        }
+        if (collider.CompareTag("AttackNorth"))
+        {
+            moveSpeed = 3 * moveSpeed;
+            isChangingDirection = true;
+            HandleRandomMovement();
+            --health;
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            LastPos = transform.position;
+            aux = new Vector2(transform.position.x, transform.position.y + knocback);
+            transform.position = aux;
+        }
+        if (collider.CompareTag("AttackSouth"))
+        {
+            moveSpeed = 3 * moveSpeed;
+            isChangingDirection = true;
+            HandleRandomMovement();
+            --health;
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            LastPos = transform.position;
+            aux = new Vector2(transform.position.x, transform.position.y - knocback);
+            transform.position = aux;
+        }
+
+        if (health < 0)
         {
             GameObject meat = this.meatPool.GetFromPool();
             if (meat != null)
             {
-                meat.transform.position = this.transform.position;
+                meat.transform.position = LastPos;
                 meat.SetActive(true);
             }
-            AudioSource.PlayClipAtPoint(deathSound, this.transform.position);
-            this.gameObject.SetActive(false);
-            this.isDead = true;
+            gameObject.SetActive(false);
+            isDead = true;
         }
     }
 }
+
