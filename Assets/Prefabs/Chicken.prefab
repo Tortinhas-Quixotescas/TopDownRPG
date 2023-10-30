@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6054170537755892146}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: 6.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -97011897
   m_SortingLayer: 1
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: -241987293, guid: b0aa8ade9dea34fde9353d5319f4e88d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   maxTimeSameDirection: 3
   minTimeIdle: 1
   maxTimeIdle: 3
-  chickenMeat: {fileID: 9190075421753059304, guid: e043faf31b65eabf1bc94696d4a05c48, type: 3}
+  meatPrefab: {fileID: 9190075421753059304, guid: e043faf31b65eabf1bc94696d4a05c48, type: 3}
   isDead: 0
   deathSound: {fileID: 8300000, guid: 1215776c6aa3dc146ad6ebe88132576d, type: 3}
 --- !u!50 &7462571676880279789

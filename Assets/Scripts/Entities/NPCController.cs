@@ -4,30 +4,29 @@ using UnityEngine;
 
 public class NPCController : EntityController
 {
+    // Movement AI
     public float minTimeSameDirection = 1.0f;
     public float maxTimeSameDirection = 3.0f;
     private float currentDirectionTime = 0;
     private bool isChangingDirection = false;
+    private float randomX = 0;
+    private float randomY = 0;
 
+    // Idle AI
     public float minTimeIdle = 1.0f;
     public float maxTimeIdle = 3.0f;
     private bool isIdle = false;
 
-    private float randomX = 0;
-    private float randomY = 0;
-
-    public ObjectPool chickenMeatPool;
-    public GameObject chickenMeat;
-
+    // Death data
+    public ObjectPool meatPool;
+    public GameObject meatPrefab;
     public bool isDead = false;
-
     public AudioClip deathSound;
 
-    // Start is called before the first frame update
     private void Start()
     {
         base.Start();
-        chickenMeatPool = new ObjectPool(chickenMeat, 1);
+        meatPool = new ObjectPool(meatPrefab, 1);
         HandleRandomMovement();
     }
 
@@ -110,17 +109,15 @@ public class NPCController : EntityController
     {
         if (collider.CompareTag("Attack"))
         {
-            GameObject chickenMeat = chickenMeatPool.GetFromPool();
-            if (chickenMeat != null)
+            GameObject meat = this.meatPool.GetFromPool();
+            if (meat != null)
             {
-                Vector2 pos = transform.position;
-
-                chickenMeat.transform.position = pos;
-                chickenMeat.SetActive(true);
+                meat.transform.position = this.transform.position;
+                meat.SetActive(true);
             }
-            AudioSource.PlayClipAtPoint(deathSound, transform.position);
-            gameObject.SetActive(false);
-            isDead = true;
+            AudioSource.PlayClipAtPoint(deathSound, this.transform.position);
+            this.gameObject.SetActive(false);
+            this.isDead = true;
         }
     }
 }
