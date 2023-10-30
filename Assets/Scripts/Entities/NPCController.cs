@@ -8,20 +8,17 @@ public class NPCController : EntityController
     public float maxTimeSameDirection = 3.0f;
     private float currentDirectionTime = 0;
     private bool isChangingDirection = false;
-
     public float minTimeIdle = 1.0f;
     public float maxTimeIdle = 3.0f;
     private bool isIdle = false;
-
     private float randomX = 0;
     private float randomY = 0;
-
     public ObjectPool chickenMeatPool;
     public GameObject chickenMeat;
-
     public bool isDead = false;
-
     public AudioClip deathSound;
+    public int health = 1;
+    public float knocback = 0.3f;
 
     // Start is called before the first frame update
     private void Start()
@@ -108,19 +105,65 @@ public class NPCController : EntityController
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Attack"))
+        Vector2 aux = Vector2.zero;
+        Vector2 LastPos = Vector2.zero;
+        if (collider.CompareTag("AttackEast"))
+        {
+            moveSpeed = 3 * moveSpeed;
+            isChangingDirection = true;
+            HandleRandomMovement();
+            --health;
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            LastPos = transform.position;
+            aux = new Vector2(transform.position.x + knocback, transform.position.y);
+            transform.position = aux;
+        }
+        if (collider.CompareTag("AttackWest"))
+        {
+            moveSpeed = 3 * moveSpeed;
+            isChangingDirection = true;
+            HandleRandomMovement();
+            --health;
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            LastPos = transform.position;
+            aux = new Vector2(transform.position.x - knocback, transform.position.y);
+            transform.position = aux;
+        }
+        if (collider.CompareTag("AttackNorth"))
+        {
+            moveSpeed = 3 * moveSpeed;
+            isChangingDirection = true;
+            HandleRandomMovement();
+            --health;
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            LastPos = transform.position;
+            aux = new Vector2(transform.position.x, transform.position.y + knocback);
+            transform.position = aux;
+        }
+        if (collider.CompareTag("AttackSouth"))
+        {
+            moveSpeed = 3 * moveSpeed;
+            isChangingDirection = true;
+            HandleRandomMovement();
+            --health;
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            LastPos = transform.position;
+            aux = new Vector2(transform.position.x, transform.position.y - knocback);
+            transform.position = aux;
+        }
+
+        if (health < 0)
         {
             GameObject chickenMeat = chickenMeatPool.GetFromPool();
             if (chickenMeat != null)
             {
-                Vector2 pos = transform.position;
-
-                chickenMeat.transform.position = pos;
+                chickenMeat.transform.position = LastPos;
                 chickenMeat.SetActive(true);
             }
-            AudioSource.PlayClipAtPoint(deathSound, transform.position);
             gameObject.SetActive(false);
             isDead = true;
+
         }
     }
 }
+

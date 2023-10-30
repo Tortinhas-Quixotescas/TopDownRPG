@@ -28,7 +28,7 @@ public class SlashController : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         this.UpdateCurrentPosition();
-        StartCoroutine(DelayExecution(0.30f));
+        StartCoroutine(DelayExecution(0.05f));
     }
     private void UpdateCurrentPosition()
     {

@@ -4,9 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Attack
   - ChickenMeat
   - CowMeat
+  - PigMeat
+  - AttackEast
+  - AttackWest
+  - AttackNorth
+  - AttackSouth
   layers:
   - Default
   - TransparentFX
