@@ -118,5 +118,7 @@ public class PlayerController : EntityController
             MainManager.Instance.UpdateInventory(Inventory.InventoryItems.ChickenMeat, 2);
         else if (collider.CompareTag("CowMeat"))
             MainManager.Instance.UpdateInventory(Inventory.InventoryItems.CowMeat, 4);
+        else if (collider.CompareTag("PigMeat"))
+            MainManager.Instance.UpdateInventory(Inventory.InventoryItems.PigMeat, 3);
     }
 }

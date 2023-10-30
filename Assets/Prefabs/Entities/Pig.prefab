@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5028263916474442325}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.133667, y: -0.55418205, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -123,15 +123,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   rigidbody: {fileID: 0}
-  animator: {fileID: 3634998013690802475}
+  animator: {fileID: 0}
   minTimeSameDirection: 1
   maxTimeSameDirection: 3
   minTimeIdle: 1
   maxTimeIdle: 3
-  chickenMeat: {fileID: 7918247643964282605, guid: e8e37664fcfc15e4490a6d3ab1203119, type: 3}
+  meatPrefab: {fileID: 7918247643964282605, guid: e8e37664fcfc15e4490a6d3ab1203119, type: 3}
   isDead: 0
   deathSound: {fileID: 8300000, guid: 4c096106f13cb8e0bb012983832c98cc, type: 3}
   health: 1
+  knocback: 0.3
 --- !u!50 &1250646447989119096
 Rigidbody2D:
   serializedVersion: 4

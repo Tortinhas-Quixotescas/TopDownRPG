@@ -43,6 +43,9 @@ public class MainManager : MonoBehaviour
             case Inventory.InventoryItems.CowMeat:
                 this.inventory.cowMeat = Math.Max(this.inventory.cowMeat + difference, 0);
                 break;
+            case Inventory.InventoryItems.PigMeat:
+                this.inventory.pigMeat = Math.Max(this.inventory.pigMeat + difference, 0);
+                break;
         }
     }
 
