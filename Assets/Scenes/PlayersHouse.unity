@@ -1770,6 +1770,14 @@ PrefabInstance:
       propertyPath: areaTransitionName
       value: playersHouseDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 1768876607800262745, guid: 59e71f6acad7c33b4a04aefe4bd73683, type: 3}
+      propertyPath: positionInNewScene.x
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768876607800262745, guid: 59e71f6acad7c33b4a04aefe4bd73683, type: 3}
+      propertyPath: positionInNewScene.y
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2699920228355287865, guid: 59e71f6acad7c33b4a04aefe4bd73683, type: 3}
       propertyPath: transitionName
       value: playersHouseDoor
@@ -1817,6 +1825,18 @@ PrefabInstance:
     - target: {fileID: 5683096081327883770, guid: 59e71f6acad7c33b4a04aefe4bd73683, type: 3}
       propertyPath: m_Name
       value: Scene Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202228685769863516, guid: 59e71f6acad7c33b4a04aefe4bd73683, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202228685769863516, guid: 59e71f6acad7c33b4a04aefe4bd73683, type: 3}
+      propertyPath: m_Size.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202228685769863516, guid: 59e71f6acad7c33b4a04aefe4bd73683, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

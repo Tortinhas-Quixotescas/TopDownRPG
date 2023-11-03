@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : EntityController
 {
-    public string areaTransitionName;
     public bool busy = false;
 
     public ObjectPool eastSlashPool;
