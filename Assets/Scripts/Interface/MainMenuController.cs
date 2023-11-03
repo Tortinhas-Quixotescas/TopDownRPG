@@ -4,15 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+
+    public GameObject creditsScreen;
+
     public void StartGame()
     {
         SceneManager.LoadScene("StartingArea", LoadSceneMode.Single);
         SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
-    }
-
-    public void OpenCredits()
-    {
-
     }
 
     public void QuitGame()
@@ -21,9 +19,9 @@ public class MainMenuController : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
     }
 
-    public void OpenLink(String url)
+    public void CreditsController(Boolean close)
     {
-        Debug.Log(url);
+        creditsScreen.SetActive(!close);
     }
 
 }
