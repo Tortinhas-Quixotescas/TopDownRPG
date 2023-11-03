@@ -299,6 +299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remainingTime: 60
+  animals: {fileID: 0}
+  animalsPrefab: {fileID: 735628340897691134, guid: 0e3e28686333f4a8e9f238ada992897e, type: 3}
 --- !u!4 &720177990
 Transform:
   m_ObjectHideFlags: 0

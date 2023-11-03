@@ -28,7 +28,7 @@ public class NPCController : EntityController
     private void Start()
     {
         base.Start();
-        meatPool = new ObjectPool(meatPrefab, 1);
+        this.ResetMeatPool();
         HandleRandomMovement();
     }
 
@@ -36,6 +36,11 @@ public class NPCController : EntityController
     {
         HandleDirectionChange();
         HandleIdleAnimation();
+    }
+
+    public void ResetMeatPool()
+    {
+        meatPool = new ObjectPool(meatPrefab, 1);
     }
 
     private void HandleDirectionChange()

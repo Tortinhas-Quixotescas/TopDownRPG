@@ -2681,6 +2681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d733ee217a283169bee1a33bbac9e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animalsPrefab: {fileID: 735628340897691134, guid: 0e3e28686333f4a8e9f238ada992897e, type: 3}
   creditsScreen: {fileID: 1321838662}
 --- !u!224 &2279140622038640215
 RectTransform:

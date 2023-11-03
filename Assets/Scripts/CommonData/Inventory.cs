@@ -9,7 +9,6 @@ public class Inventory
         PigMeat
     }
 
-
     public LootItem chickenMeat;
     public LootItem cowMeat;
     public LootItem pigMeat;

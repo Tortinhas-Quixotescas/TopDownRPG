@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MainManager : MonoBehaviour
@@ -7,6 +7,8 @@ public class MainManager : MonoBehaviour
 
     public int remainingTime;
     public Inventory inventory;
+    public GameObject animals;
+    public GameObject animalsPrefab;
 
     private void Awake()
     {
@@ -20,6 +22,8 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         this.inventory = new Inventory();
+        this.animals = Instantiate(animalsPrefab);
+        DontDestroyOnLoad(this.animals);
         InvokeRepeating("DecreaseTimeRemaining", 0, 1);
     }
 
@@ -48,5 +52,11 @@ public class MainManager : MonoBehaviour
                 break;
         }
     }
+
+    // public void SaveEntities(GameObject parent)
+    // {
+    //     DontDestroyOnLoad(parent);
+    //     parent.SetActive(false);
+    // }
 
 }

@@ -11,6 +11,7 @@ TagManager:
   - AttackWest
   - AttackNorth
   - AttackSouth
+  - Animals
   layers:
   - Default
   - TransparentFX
