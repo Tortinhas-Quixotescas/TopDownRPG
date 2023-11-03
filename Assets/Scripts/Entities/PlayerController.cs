@@ -115,10 +115,10 @@ public class PlayerController : EntityController
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("ChickenMeat"))
-            MainManager.Instance.UpdateInventory(Inventory.InventoryItems.ChickenMeat, 2);
+            MainManager.Instance.UpdateInventory(Inventory.InventoryItems.ChickenMeat);
         else if (collider.CompareTag("CowMeat"))
-            MainManager.Instance.UpdateInventory(Inventory.InventoryItems.CowMeat, 4);
+            MainManager.Instance.UpdateInventory(Inventory.InventoryItems.CowMeat);
         else if (collider.CompareTag("PigMeat"))
-            MainManager.Instance.UpdateInventory(Inventory.InventoryItems.PigMeat, 3);
+            MainManager.Instance.UpdateInventory(Inventory.InventoryItems.PigMeat);
     }
 }

@@ -33,18 +33,18 @@ public class MainManager : MonoBehaviour
         }
     }
 
-    public void UpdateInventory(Inventory.InventoryItems item, int difference)
+    public void UpdateInventory(Inventory.InventoryItems item)
     {
         switch (item)
         {
             case Inventory.InventoryItems.ChickenMeat:
-                this.inventory.chickenMeat = Math.Max(this.inventory.chickenMeat + difference, 0);
+                this.inventory.chickenMeat.IncreaseCurrentQuantity();
                 break;
             case Inventory.InventoryItems.CowMeat:
-                this.inventory.cowMeat = Math.Max(this.inventory.cowMeat + difference, 0);
+                this.inventory.cowMeat.IncreaseCurrentQuantity();
                 break;
             case Inventory.InventoryItems.PigMeat:
-                this.inventory.pigMeat = Math.Max(this.inventory.pigMeat + difference, 0);
+                this.inventory.pigMeat.IncreaseCurrentQuantity();
                 break;
         }
     }
