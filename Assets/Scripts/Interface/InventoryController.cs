@@ -18,9 +18,20 @@ public class InventoryController : MonoBehaviour
 
     private void OnEnable()
     {
-        this.chickenMeatQuantityText.SetText(MainManager.Instance.inventory.chickenMeat.ToString().PadLeft(2, '0'));
-        this.cowMeatQuantityText.SetText(MainManager.Instance.inventory.cowMeat.ToString().PadLeft(2, '0'));
-        this.pigMeatQuantityText.SetText(MainManager.Instance.inventory.pigMeat.ToString().PadLeft(2, '0'));
+        this.chickenMeatQuantityText.SetText(
+            MainManager.Instance.inventory.chickenMeat.GetCurrentQuantity().ToString().PadLeft(2, '0')
+            + "/"
+            + MainManager.Instance.inventory.chickenMeat.GetMaxQuantity().ToString().PadLeft(2, '0')
+        );
+        this.cowMeatQuantityText.SetText(
+            MainManager.Instance.inventory.cowMeat.GetCurrentQuantity().ToString().PadLeft(2, '0')
+            + "/"
+            + MainManager.Instance.inventory.cowMeat.GetMaxQuantity().ToString().PadLeft(2, '0')
+        ); this.pigMeatQuantityText.SetText(
+            MainManager.Instance.inventory.pigMeat.GetCurrentQuantity().ToString().PadLeft(2, '0')
+            + "/"
+            + MainManager.Instance.inventory.pigMeat.GetMaxQuantity().ToString().PadLeft(2, '0')
+        );
     }
 
 }

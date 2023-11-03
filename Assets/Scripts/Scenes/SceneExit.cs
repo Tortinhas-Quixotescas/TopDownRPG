@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class SceneExit : MonoBehaviour
 {
     public string destinyScene;
-    public string areaTransitionName;
+    public Vector2 positionInNewScene;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -12,7 +12,8 @@ public class SceneExit : MonoBehaviour
         {
             SceneManager.LoadScene(destinyScene, LoadSceneMode.Single);
             SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
-            PlayerController.uniqueInstance.areaTransitionName = areaTransitionName;
+            PlayerController.uniqueInstance.transform.position = this.positionInNewScene;
         }
     }
+
 }
