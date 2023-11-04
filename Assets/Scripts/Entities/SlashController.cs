@@ -1,10 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SlashController : MonoBehaviour
 {
-
     public float xPositionOffset;
     public float yPositionOffset;
     private Transform player;

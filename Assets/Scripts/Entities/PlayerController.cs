@@ -1,11 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : EntityController
 {
     public bool busy = false;
-
     public ObjectPool eastSlashPool;
     public GameObject eastSlash;
     public ObjectPool westSlashPool;
@@ -14,9 +12,7 @@ public class PlayerController : EntityController
     public GameObject northSlash;
     public ObjectPool southSlashPool;
     public GameObject southSlash;
-
     private bool isDelaying = false;
-
     public static PlayerController uniqueInstance;
 
     void Awake()

@@ -1,12 +1,24 @@
-using System;
 using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
     public static MainManager Instance;
-
+    public int limitTime;
     public int remainingTime;
     public Inventory inventory;
+    public GameObject animalsPrefab;
+    public GameObject meatContainer;
+    public GameObject animalsContainer;
+
+    public void RestartGame()
+    {
+        this.remainingTime = this.limitTime;
+        this.inventory = new Inventory();
+        this.animalsContainer = Instantiate(animalsPrefab);
+        DontDestroyOnLoad(animalsContainer);
+        DontDestroyOnLoad(meatContainer);
+        InvokeRepeating("DecreaseTimeRemaining", 0, 1);
+    }
 
     private void Awake()
     {
@@ -19,8 +31,8 @@ public class MainManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        this.inventory = new Inventory();
-        InvokeRepeating("DecreaseTimeRemaining", 0, 1);
+        // TODO: Remove in final version
+        this.RestartGame();
     }
 
     private void DecreaseTimeRemaining()

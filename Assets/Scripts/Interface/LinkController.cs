@@ -1,11 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class LinkController : MonoBehaviour, IPointerClickHandler
 {
-
-    public String url;
+    public string url;
 
     public void OnPointerClick(PointerEventData eventData)
     {

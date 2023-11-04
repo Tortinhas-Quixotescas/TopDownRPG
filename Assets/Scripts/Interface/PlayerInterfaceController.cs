@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerInterfaceController : MonoBehaviour
 {
-
     public GameObject timer;
     public GameObject inventoryPanel;
     private TMP_Text timerTMP;

@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class EntityController : MonoBehaviour
 {
     public float moveSpeed;
-
     [SerializeField] protected Rigidbody2D rigidbody;
     [SerializeField] protected Animator animator;
     protected float lastXValue = 0;

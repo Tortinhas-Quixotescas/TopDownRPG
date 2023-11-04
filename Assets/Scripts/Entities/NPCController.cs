@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCController : EntityController
@@ -18,8 +17,8 @@ public class NPCController : EntityController
     private bool isIdle = false;
 
     // Death data
-    public ObjectPool meatPool;
     public GameObject meatPrefab;
+    public GameObject meat;
     public bool isDead = false;
     public AudioClip deathSound;
     public int health = 1;
@@ -28,7 +27,9 @@ public class NPCController : EntityController
     private void Start()
     {
         base.Start();
-        meatPool = new ObjectPool(meatPrefab, 1);
+        this.meat = Instantiate(this.meatPrefab);
+        this.meat.transform.SetParent(MainManager.Instance.meatContainer.transform);
+        this.meat.SetActive(false);
         HandleRandomMovement();
     }
 
@@ -158,11 +159,10 @@ public class NPCController : EntityController
 
         if (health < 0)
         {
-            GameObject meat = this.meatPool.GetFromPool();
-            if (meat != null)
+            if (this.meat != null)
             {
-                meat.transform.position = LastPos;
-                meat.SetActive(true);
+                this.meat.transform.position = LastPos;
+                this.meat.SetActive(true);
             }
             gameObject.SetActive(false);
             isDead = true;
