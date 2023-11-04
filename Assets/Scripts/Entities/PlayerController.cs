@@ -13,6 +13,8 @@ public class PlayerController : EntityController
     public ObjectPool southSlashPool;
     public GameObject southSlash;
     private bool isDelaying = false;
+    private bool canReach = false;
+    private Collider2D interactiveCollider;
     public static PlayerController uniqueInstance;
 
     void Awake()
@@ -38,6 +40,8 @@ public class PlayerController : EntityController
     {
         HandleMovementInput();
         HandleSwordAttack();
+        if (Input.GetKeyDown(KeyCode.Q) && canReach)
+            HandleInteractiveObject(this.interactiveCollider);
     }
 
     private void OnLevelWasLoaded()
@@ -86,6 +90,15 @@ public class PlayerController : EntityController
         }
     }
 
+    private void HandleInteractiveObject(Collider2D collider)
+    {
+        InteractiveObjectController interactiveObject = collider.GetComponent<InteractiveObjectController>();
+        if (interactiveObject != null)
+        {
+            interactiveObject.Interact();
+        }
+    }
+
     private void PerformSwordAttack(string triggerName, GameObject slash, ObjectPool slashPool)
     {
         this.animator.SetTrigger(triggerName);
@@ -115,5 +128,20 @@ public class PlayerController : EntityController
             MainManager.Instance.UpdateInventory(Inventory.InventoryItems.CowMeat);
         else if (collider.CompareTag("PigMeat"))
             MainManager.Instance.UpdateInventory(Inventory.InventoryItems.PigMeat);
+    }
+
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Interactive"))
+        {
+            canReach = true;
+            this.interactiveCollider = collider;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Interactive"))
+            canReach = false;
     }
 }

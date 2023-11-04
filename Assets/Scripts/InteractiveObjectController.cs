@@ -1,35 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractiveObjectController : MonoBehaviour
 {
-    public string itemName;
-    public int itemPool = 5;
-
+    public Inventory.InventoryItems itemName;
+    public int itemPool = 20;
     public AudioClip pickUpSound;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public string GetItem()
+    public void Interact()
     {
         if (itemPool > 0)
         {
             AudioSource.PlayClipAtPoint(pickUpSound, transform.position);
-            --itemPool;
-            return this.itemName;
+            if (itemName.Equals(Inventory.InventoryItems.Corn))
+            {
+                MainManager.Instance.UpdateInventory(Inventory.InventoryItems.Corn);
+                itemPool -= MainManager.Instance.inventory.corn.GetIncreaseAmout();
+            }
+            if (itemName.Equals(Inventory.InventoryItems.Potato))
+            {
+                MainManager.Instance.UpdateInventory(Inventory.InventoryItems.Potato);
+                itemPool -= MainManager.Instance.inventory.potato.GetIncreaseAmout();
+            }
+            if (itemName.Equals(Inventory.InventoryItems.Tomato))
+            {
+                MainManager.Instance.UpdateInventory(Inventory.InventoryItems.Tomato);
+                itemPool -= MainManager.Instance.inventory.tomato.GetIncreaseAmout();
+            }
+            if (itemName.Equals(Inventory.InventoryItems.Spinach))
+            {
+                MainManager.Instance.UpdateInventory(Inventory.InventoryItems.Spinach);
+                itemPool -= MainManager.Instance.inventory.spinach.GetIncreaseAmout();
+            }
+            if (itemName.Equals(Inventory.InventoryItems.Egg))
+            {
+                MainManager.Instance.UpdateInventory(Inventory.InventoryItems.Egg);
+                itemPool -= MainManager.Instance.inventory.egg.GetIncreaseAmout();
+            }
         }
-        else
-            return null;
     }
 }

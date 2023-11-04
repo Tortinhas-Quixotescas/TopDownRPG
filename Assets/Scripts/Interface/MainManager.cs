@@ -58,6 +58,21 @@ public class MainManager : MonoBehaviour
             case Inventory.InventoryItems.PigMeat:
                 this.inventory.pigMeat.IncreaseCurrentQuantity();
                 break;
+            case Inventory.InventoryItems.Corn:
+                this.inventory.corn.IncreaseCurrentQuantity();
+                break;
+            case Inventory.InventoryItems.Potato:
+                this.inventory.potato.IncreaseCurrentQuantity();
+                break;
+            case Inventory.InventoryItems.Tomato:
+                this.inventory.tomato.IncreaseCurrentQuantity();
+                break;
+            case Inventory.InventoryItems.Spinach:
+                this.inventory.spinach.IncreaseCurrentQuantity();
+                break;
+            case Inventory.InventoryItems.Egg:
+                this.inventory.egg.IncreaseCurrentQuantity();
+                break;
         }
     }
 
