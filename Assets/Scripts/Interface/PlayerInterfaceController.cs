@@ -16,7 +16,6 @@ public class PlayerInterfaceController : MonoBehaviour
     private void Update()
     {
         this.timerTMP.SetText(MainManager.Instance.remainingTime.ToString().PadLeft(3, '0'));
-
         bool inventoryChange = Input.GetKeyDown(KeyCode.E);
         if (inventoryChange)
         {
@@ -24,6 +23,11 @@ public class PlayerInterfaceController : MonoBehaviour
             this.inventoryPanel.SetActive(!currentState);
             Time.timeScale = currentState == true ? 1 : 0;
         }
+    }
+
+    public void ReturnToMenu()
+    {
+        Debug.Log("Menu");
     }
 
 }

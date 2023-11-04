@@ -9,15 +9,18 @@ public class MainManager : MonoBehaviour
     public GameObject animalsPrefab;
     public GameObject meatContainer;
     public GameObject animalsContainer;
+    public GameObject gameOverScreen;
 
     public void RestartGame()
     {
         this.remainingTime = this.limitTime;
         this.inventory = new Inventory();
+        Destroy(this.animalsContainer);
         this.animalsContainer = Instantiate(animalsPrefab);
         DontDestroyOnLoad(animalsContainer);
         DontDestroyOnLoad(meatContainer);
         InvokeRepeating("DecreaseTimeRemaining", 0, 1);
+        Time.timeScale = 1;
     }
 
     private void Awake()
@@ -40,8 +43,8 @@ public class MainManager : MonoBehaviour
         this.remainingTime--;
         if (this.remainingTime <= 0)
         {
-            Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
+            this.gameOverScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 

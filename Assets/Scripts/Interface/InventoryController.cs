@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
-    private Transform itemsPanel;
-    private TMP_Text chickenMeatQuantityText;
+    [SerializeField] private Transform itemsPanel;
+    [SerializeField] private TMP_Text chickenMeatQuantityText;
     private TMP_Text cowMeatQuantityText;
     private TMP_Text pigMeatQuantityText;
     private TMP_Text cornQuantityText;
