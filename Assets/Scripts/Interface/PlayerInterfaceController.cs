@@ -5,6 +5,7 @@ public class PlayerInterfaceController : MonoBehaviour
 {
     public GameObject timer;
     public GameObject inventoryPanel;
+    public GameObject GameOverPanel;
     private TMP_Text timerTMP;
 
     private void Start()
@@ -23,6 +24,11 @@ public class PlayerInterfaceController : MonoBehaviour
             this.inventoryPanel.SetActive(!currentState);
             Time.timeScale = currentState == true ? 1 : 0;
         }
+    }
+
+    public void ShowGameOverPanel()
+    {
+        this.GameOverPanel.SetActive(true);
     }
 
     public void ReturnToMenu()

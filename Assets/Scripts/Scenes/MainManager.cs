@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainManager : MonoBehaviour
 {
@@ -9,10 +10,11 @@ public class MainManager : MonoBehaviour
     public GameObject animalsPrefab;
     public GameObject meatContainer;
     public GameObject animalsContainer;
-    public GameObject gameOverScreen;
 
     public void RestartGame()
     {
+        SceneManager.LoadScene("StartingArea", LoadSceneMode.Single);
+        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
         this.remainingTime = this.limitTime;
         this.inventory = new Inventory();
         Destroy(this.animalsContainer);
@@ -33,9 +35,6 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        // TODO: Remove in final version
-        this.RestartGame();
     }
 
     private void DecreaseTimeRemaining()
@@ -43,7 +42,12 @@ public class MainManager : MonoBehaviour
         this.remainingTime--;
         if (this.remainingTime <= 0)
         {
-            this.gameOverScreen.SetActive(true);
+            CancelInvoke();
+            Scene interfaceScene = SceneManager.GetSceneByName("Interface");
+            SceneManager.SetActiveScene(interfaceScene);
+            PlayerInterfaceController interfaceController = FindFirstObjectByType<PlayerInterfaceController>();
+            interfaceController.ShowGameOverPanel();
+            Cursor.visible = true;
             Time.timeScale = 0;
         }
     }

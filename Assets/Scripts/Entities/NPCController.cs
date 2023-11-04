@@ -39,6 +39,11 @@ public class NPCController : EntityController
         HandleIdleAnimation();
     }
 
+    private void OnEnable()
+    {
+        HandleRandomMovement();
+    }
+
     private void HandleDirectionChange()
     {
         if (!isChangingDirection)

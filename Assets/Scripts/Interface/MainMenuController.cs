@@ -8,9 +8,8 @@ public class MainMenuController : MonoBehaviour
 
     public void StartGame()
     {
+        // SceneManager.LoadScene("Loader", LoadSceneMode.Single);
         MainManager.Instance.RestartGame();
-        SceneManager.LoadScene("StartingArea", LoadSceneMode.Single);
-        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
         Cursor.visible = false;
     }
 
