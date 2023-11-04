@@ -4268,6 +4268,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractiveTomato
       objectReference: {fileID: 0}
+    - target: {fileID: 8933261722726034916, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
+      propertyPath: itemName
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933261722726034916, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
+      propertyPath: itemPool
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8992402158842108743, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5
@@ -13902,6 +13910,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractiveSpinach
       objectReference: {fileID: 0}
+    - target: {fileID: 8933261722726034916, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
+      propertyPath: itemName
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933261722726034916, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
+      propertyPath: itemPool
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8992402158842108743, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.5
@@ -17212,6 +17228,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractiveCorn
       objectReference: {fileID: 0}
+    - target: {fileID: 8933261722726034916, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
+      propertyPath: itemPool
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8992402158842108743, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -17886,6 +17906,14 @@ PrefabInstance:
     - target: {fileID: 8596703169956533722, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
       propertyPath: m_Name
       value: InteractivePotato
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933261722726034916, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
+      propertyPath: itemName
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933261722726034916, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
+      propertyPath: itemPool
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8992402158842108743, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
       propertyPath: m_LocalPosition.x

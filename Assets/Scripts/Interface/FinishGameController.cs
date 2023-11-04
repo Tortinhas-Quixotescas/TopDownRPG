@@ -1,6 +1,6 @@
 using UnityEngine.SceneManagement;
 
-public class GameOverController : InventoryController
+public class FinishGameController : InventoryController
 {
     public void ReturnToMenu()
     {

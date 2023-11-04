@@ -5,7 +5,7 @@ public class PlayerInterfaceController : MonoBehaviour
 {
     public GameObject timer;
     public GameObject inventoryPanel;
-    public GameObject GameOverPanel;
+    public GameObject FinishGamePanel;
     private TMP_Text timerTMP;
 
     private void Start()
@@ -26,14 +26,11 @@ public class PlayerInterfaceController : MonoBehaviour
         }
     }
 
-    public void ShowGameOverPanel()
+    public void ShowFinishGamePanel(bool victory)
     {
-        this.GameOverPanel.SetActive(true);
-    }
-
-    public void ReturnToMenu()
-    {
-        Debug.Log("Menu");
+        TMP_Text title = this.FinishGamePanel.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
+        title.SetText(victory ? "You Won!" : "Game Over");
+        this.FinishGamePanel.SetActive(true);
     }
 
 }

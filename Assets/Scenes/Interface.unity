@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 503958425}
   - component: {fileID: 503958428}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: FinishGame
   m_TagString: GameOverScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,8 +747,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e11ba1a2671ff5e8ea4fc9b3d4492f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsPanel: {fileID: 0}
-  chickenMeatQuantityText: {fileID: 0}
 --- !u!224 &557489520 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8278014946923087187, guid: de1785b1dd840f939be590c36002fad5, type: 3}
@@ -2446,8 +2444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade1694ba90731e358826e2bc89fef01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsPanel: {fileID: 0}
-  chickenMeatQuantityText: {fileID: 0}
 --- !u!1 &1578069920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,7 +3149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 5595969693786209427}
   inventoryPanel: {fileID: 8315265205999317191}
-  GameOverPanel: {fileID: 503958422}
+  FinishGamePanel: {fileID: 503958422}
 --- !u!224 &1513151181888576118
 RectTransform:
   m_ObjectHideFlags: 0

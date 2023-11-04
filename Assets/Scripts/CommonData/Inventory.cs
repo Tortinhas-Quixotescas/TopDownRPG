@@ -33,6 +33,18 @@ public class Inventory
         this.egg = new LootItem(12, 2);
     }
 
+    public bool checkVictory()
+    {
+        return this.chickenMeat.hasCompleted()
+            && this.cowMeat.hasCompleted()
+            && this.pigMeat.hasCompleted()
+            && this.corn.hasCompleted()
+            && this.potato.hasCompleted()
+            && this.tomato.hasCompleted()
+            && this.spinach.hasCompleted()
+            && this.egg.hasCompleted();
+    }
+
 }
 
 public class LootItem
@@ -66,5 +78,11 @@ public class LootItem
     public void IncreaseCurrentQuantity()
     {
         this.currentQuantity = this.currentQuantity + this.increaseAmount;
+    }
+
+    public bool hasCompleted()
+    {
+        bool completed = this.currentQuantity >= this.maxQuantity;
+        return completed;
     }
 }

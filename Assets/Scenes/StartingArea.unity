@@ -29263,6 +29263,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractiveEgg
       objectReference: {fileID: 0}
+    - target: {fileID: 8933261722726034916, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
+      propertyPath: itemName
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933261722726034916, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
+      propertyPath: itemPool
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8992402158842108743, guid: da24494b952d8d032bafa436d17f9d90, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13

@@ -37,18 +37,23 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void FinishGame(bool victory)
+    {
+        CancelInvoke();
+        Scene interfaceScene = SceneManager.GetSceneByName("Interface");
+        SceneManager.SetActiveScene(interfaceScene);
+        PlayerInterfaceController interfaceController = FindFirstObjectByType<PlayerInterfaceController>();
+        interfaceController.ShowFinishGamePanel(victory);
+        Cursor.visible = true;
+        Time.timeScale = 0;
+    }
+
     private void DecreaseTimeRemaining()
     {
         this.remainingTime--;
         if (this.remainingTime <= 0)
         {
-            CancelInvoke();
-            Scene interfaceScene = SceneManager.GetSceneByName("Interface");
-            SceneManager.SetActiveScene(interfaceScene);
-            PlayerInterfaceController interfaceController = FindFirstObjectByType<PlayerInterfaceController>();
-            interfaceController.ShowGameOverPanel();
-            Cursor.visible = true;
-            Time.timeScale = 0;
+            this.FinishGame(false);
         }
     }
 

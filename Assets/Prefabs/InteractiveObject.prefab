@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8992402158842108743}
-  - component: {fileID: 4040998405378643326}
   - component: {fileID: 2098580320712470569}
+  - component: {fileID: 8933261722726034916}
   m_Layer: 0
   m_Name: InteractiveObject
   m_TagString: Interactive
@@ -33,21 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4040998405378643326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8596703169956533722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5016e4324d6f782a2bc8092fe3e0b78a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 3
-  itemPool: 20
-  pickUpSound: {fileID: 8300000, guid: 8ba1939ddb64585c2bc896a0bab0481a, type: 3}
 --- !u!70 &2098580320712470569
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -83,3 +68,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.25}
   m_Size: {x: 1, y: 1.75}
   m_Direction: 0
+--- !u!114 &8933261722726034916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8596703169956533722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c7563f16487734c8e19f7eb692b068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 3
+  itemPool: 1
+  pickUpSound: {fileID: 8300000, guid: 8ba1939ddb64585c2bc896a0bab0481a, type: 3}
