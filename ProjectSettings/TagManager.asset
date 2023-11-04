@@ -11,6 +11,8 @@ TagManager:
   - AttackWest
   - AttackNorth
   - AttackSouth
+  - Interactive
+  - GameOverScreen
   layers:
   - Default
   - TransparentFX

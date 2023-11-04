@@ -1,16 +1,9 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : EntityController
 {
     public bool busy = false;
-    public int cornAmount = 0;
-    public int potatoAmount = 0;
-    public int tomatoAmount = 0;
-    public int spinachAmount = 0;
-
     public ObjectPool eastSlashPool;
     public GameObject eastSlash;
     public ObjectPool westSlashPool;
@@ -19,18 +12,12 @@ public class PlayerController : EntityController
     public GameObject northSlash;
     public ObjectPool southSlashPool;
     public GameObject southSlash;
-
     private bool isDelaying = false;
     private bool canReach = false;
-
+    private Collider2D interactiveCollider;
     public static PlayerController uniqueInstance;
 
     void Awake()
-    {
-        InitializeSingleton();
-    }
-
-    private void InitializeSingleton()
     {
         if (uniqueInstance == null)
         {
@@ -51,7 +38,15 @@ public class PlayerController : EntityController
 
     private void Update()
     {
-        HandleInput();
+        HandleMovementInput();
+        HandleSwordAttack();
+        if (Input.GetKeyDown(KeyCode.Q) && canReach)
+            HandleInteractiveObject(this.interactiveCollider);
+    }
+
+    private void OnLevelWasLoaded()
+    {
+        InitializeSlashPools();
     }
 
     private void InitializeSlashPools()
@@ -62,16 +57,10 @@ public class PlayerController : EntityController
         southSlashPool = new ObjectPool(southSlash, 1);
     }
 
-    private void HandleInput()
-    {
-        HandleMovementInput();
-        HandleSwordAttack();
-    }
-
     private void HandleMovementInput()
     {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        HandleMovementInput(input);
+        this.HandleMovementInput(input);
     }
 
     private void HandleSwordAttack()
@@ -80,26 +69,37 @@ public class PlayerController : EntityController
         {
             busy = true;
 
-            if (TryPerformSwordAttack("swordAttackEast", eastSlash, eastSlashPool))
+            if (this.lastXValue > 0)
             {
-                StartCoroutine(DelayExecution(0.30f));
+                PerformSwordAttack("swordAttackEast", eastSlash, eastSlashPool);
             }
-            else if (TryPerformSwordAttack("swordAttackWest", westSlash, westSlashPool))
+            else if (this.lastXValue < 0)
             {
-                StartCoroutine(DelayExecution(0.30f));
+                PerformSwordAttack("swordAttackWest", westSlash, westSlashPool);
             }
-            else if (TryPerformSwordAttack("swordAttackNorth", northSlash, northSlashPool))
+            else if (this.lastYValue > 0)
             {
-                StartCoroutine(DelayExecution(0.30f));
+                PerformSwordAttack("swordAttackNorth", northSlash, northSlashPool);
             }
-            else if (TryPerformSwordAttack("swordAttackSouth", southSlash, southSlashPool))
+            else if (this.lastYValue < 0)
             {
-                StartCoroutine(DelayExecution(0.30f));
+                PerformSwordAttack("swordAttackSouth", southSlash, southSlashPool);
             }
+
+            StartCoroutine(DelayExecution(0.30f));
         }
     }
 
-    private bool TryPerformSwordAttack(string triggerName, GameObject slash, ObjectPool slashPool)
+    private void HandleInteractiveObject(Collider2D collider)
+    {
+        InteractiveObjectController interactiveObject = collider.GetComponent<InteractiveObjectController>();
+        if (interactiveObject != null)
+        {
+            interactiveObject.Interact();
+        }
+    }
+
+    private void PerformSwordAttack(string triggerName, GameObject slash, ObjectPool slashPool)
     {
         this.animator.SetTrigger(triggerName);
         GameObject slashObject = slashPool.GetFromPool();
@@ -108,9 +108,7 @@ public class PlayerController : EntityController
             Vector2 pos = transform.position;
             slashObject.transform.position = pos;
             slashObject.SetActive(true);
-            return true;
         }
-        return false;
     }
 
     private IEnumerator DelayExecution(float delayTime)
@@ -124,11 +122,6 @@ public class PlayerController : EntityController
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        HandleSlashCollision(collider);
-    }
-
-    private void HandleSlashCollision(Collider2D collider)
-    {
         if (collider.CompareTag("ChickenMeat"))
             MainManager.Instance.UpdateInventory(Inventory.InventoryItems.ChickenMeat);
         else if (collider.CompareTag("CowMeat"))
@@ -140,29 +133,9 @@ public class PlayerController : EntityController
     void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.CompareTag("Interactive"))
-            canReach = true;
-        if (Input.GetKeyDown(KeyCode.Q) && canReach)
-            HandleInteractiveObject(collider);
-
-    }
-
-    private void HandleInteractiveObject(Collider2D collider)
-    {
-        InteractiveObjectController interactiveObject = collider.GetComponent<InteractiveObjectController>();
-        if (interactiveObject != null)
         {
-            string itemName = interactiveObject.GetItem();
-            if (itemName != null)
-            {
-                if (itemName.Equals("Corn"))
-                    ++cornAmount;
-                if (itemName.Equals("Potato"))
-                    ++potatoAmount;
-                if (itemName.Equals("Tomato"))
-                    ++tomatoAmount;
-                if (itemName.Equals("Spinach"))
-                    ++spinachAmount;
-            }
+            canReach = true;
+            this.interactiveCollider = collider;
         }
     }
 

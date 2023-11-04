@@ -1,24 +1,48 @@
-using System;
-
 public class Inventory
 {
     public enum InventoryItems
     {
         ChickenMeat,
         CowMeat,
-        PigMeat
+        PigMeat,
+        Corn,
+        Potato,
+        Tomato,
+        Spinach,
+        Egg
     }
-
 
     public LootItem chickenMeat;
     public LootItem cowMeat;
     public LootItem pigMeat;
+    public LootItem corn;
+    public LootItem potato;
+    public LootItem tomato;
+    public LootItem spinach;
+    public LootItem egg;
 
     public Inventory()
     {
         this.chickenMeat = new LootItem(5, 1);
         this.cowMeat = new LootItem(12, 4);
         this.pigMeat = new LootItem(8, 2);
+        this.corn = new LootItem(6, 1);
+        this.potato = new LootItem(10, 1);
+        this.tomato = new LootItem(16, 1);
+        this.spinach = new LootItem(4, 1);
+        this.egg = new LootItem(12, 2);
+    }
+
+    public bool checkVictory()
+    {
+        return this.chickenMeat.hasCompleted()
+            && this.cowMeat.hasCompleted()
+            && this.pigMeat.hasCompleted()
+            && this.corn.hasCompleted()
+            && this.potato.hasCompleted()
+            && this.tomato.hasCompleted()
+            && this.spinach.hasCompleted()
+            && this.egg.hasCompleted();
     }
 
 }
@@ -46,13 +70,19 @@ public class LootItem
         return this.maxQuantity;
     }
 
-    // public void SetCurrentQuantity(int quantity)
-    // {
-    //     this.currentQuantity = Math.Max(quantity, 0);
-    // }
+    public int GetIncreaseAmout()
+    {
+        return this.increaseAmount;
+    }
 
     public void IncreaseCurrentQuantity()
     {
         this.currentQuantity = this.currentQuantity + this.increaseAmount;
+    }
+
+    public bool hasCompleted()
+    {
+        bool completed = this.currentQuantity >= this.maxQuantity;
+        return completed;
     }
 }

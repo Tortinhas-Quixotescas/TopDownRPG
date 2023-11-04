@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerLoader : MonoBehaviour
@@ -13,9 +11,4 @@ public class PlayerLoader : MonoBehaviour
             Instantiate(player);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

@@ -13,6 +13,8 @@ public class SceneExit : MonoBehaviour
             SceneManager.LoadScene(destinyScene, LoadSceneMode.Single);
             SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
             PlayerController.uniqueInstance.transform.position = this.positionInNewScene;
+
+            MainManager.Instance.animalsContainer.SetActive(destinyScene.Equals("StartingArea"));
         }
     }
 
